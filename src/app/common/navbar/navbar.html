@@ -1,0 +1,30 @@
+<!--<nav class="navbar navbar-defult">
+    <a ui-sref-active="active" class="navbar-brand" ui-sref="first">Project name</a>
+            <ul class="nav navbar-nav">
+                <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
+                <li ui-sref-active="active"><a ui-sref="about">About</a></li>
+                <li ui-sref-active="active"><a ui-sref="first">Contact</a></li>
+            </ul>
+</nav>-->
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+   <div class="container">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" ui-sref-active="active" ui-sref="first">Project theme</a>
+      </div>
+
+      <div id="navbar" class="navbar-collapse collapse" ng-class="!navCollapsed && 'in'" aria-expanded="true">
+          <ul class="nav navbar-nav navbar-inverse">
+            <li ui-sref-active="active"><a ui-sref="home" ng-click="navCollapsed = true">Home</a></li>
+            <li ui-sref-active="active"><a ui-sref="about" ng-click="navCollapsed = true">About</a></li>
+            <li ui-sref-active="active"><a ui-sref="about" ng-click="navCollapsed = true">Contact</a></li>
+          </ul>
+        </div>
+    </div>    
+</nav>
