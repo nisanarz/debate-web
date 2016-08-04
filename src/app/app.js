@@ -3,7 +3,7 @@ import uiRouter from 'angular-ui-router';
 import ngAnimate from 'angular-animate';
 import ngMaterial from 'angular-material';
 import ngAria from 'angular-aria';
-import 'angular-material/angular-material.css';
+
 import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';

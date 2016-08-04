@@ -1,10 +1,11 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import homeComponent from './home.component';
+import ngMaterial from 'angular-material';
 
 
 let homeModule = angular.module('home', [
-  uiRouter
+  uiRouter, ngMaterial
 ])
 
 .config(($stateProvider, $urlRouterProvider) => {
