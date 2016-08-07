@@ -1,37 +1,17 @@
 class HomeController {
-  constructor() {
+  constructor($scope) {
     this.name = 'home';
-
-
-    // this.mytime = new Date();
-    // this.hstep = 1;
-    // this.mstep = 15;
-    // this.options = {
-    //   hstep: [1, 2, 3],
-    //   mstep: [1, 5, 10, 15, 25, 30]
-    // };
-    // this.ismeridian = true;
+    this.user={
+      firstName: "",
+      lastName: ""
+    }
 
   }
-  
-  // toggleMode(){
-  //   this.ismeridian = ! this.ismeridian;
-  // }
-  
-  // update(){
-  //   var d = new Date();
-  //     d.setHours( 14 );
-  //     d.setMinutes( 0 );
-  //     this.mytime = d;
-  // }
-  
-  // changed(){
-    
-  // }
-  
-  // clear(){
-  //   this.mytime = null;
-  // }
+
+  changeDB(val){
+    mainApp.database().ref("/").child('nisan').set(val);
+  }
+
     
 }
 

@@ -16,8 +16,9 @@
     <div class="row">
         <md-input-container class="md-block" flex-gt-sm>
                 <label>First name</label>
-                <input ng-model="user.firstName">
+                <input ng-model="vm.user.firstName">
          </md-input-container>
+         <button ng-click="vm.changeDB(vm.user.firstName)">save</button>
     </div>
 </div>
 
