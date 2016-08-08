@@ -1,4 +1,5 @@
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
         context: path.join(__dirname, 'src'),
@@ -29,6 +30,13 @@ module.exports = {
                 
             ]
         },
+        plugins: [
+            new HtmlWebpackPlugin({
+                template: 'index.html',
+                inject: 'body',
+                hash: true
+            })
+        ],
         devtool: "#inline-source-map"
 
 };
