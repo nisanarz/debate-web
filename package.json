@@ -8,7 +8,7 @@
     "start": "node_modules/.bin/webpack-dev-server --content-base src/ --hot --inline",
     "build": "rimraf dist && webpack --config webpack.prod.config.js --progress --profile --bail",
     "clean": "rimraf dist",
-    "publish": "npm run build && git add dist -f && git commit -m \"dist subtree commit\" && git push --delete origin gh-pages && git subtree push --prefix dist origin gh-pages"
+    "publish": "npm run build && git add dist -f && git commit -m \"dist subtree commit\" && git push --delete origin gh-pages && git subtree push --prefix dist origin gh-pages && npm run clean"
   },
   "author": "",
   "license": "ISC",
