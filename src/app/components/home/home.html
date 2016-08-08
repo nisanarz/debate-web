@@ -18,8 +18,12 @@
                 <label>First name</label>
                 <input ng-model="vm.user.firstName">
          </md-input-container>
-         <button ng-click="vm.changeDB(vm.user.firstName)">save</button>
+         <div class="col-sm-6">
+         <a data-toggle="modal" data-target="#myModal" class="btn btn-circle btn-primary" ng-click="vm.changeDB(vm.user.firstName)"><i class="glyphicon glyphicon-ok"></i></a>
+         <!--use this circle buttons here: http://bootsnipp.com/snippets/8deZ-->
+        </div>
     </div>
+    
 </div>
 
 
