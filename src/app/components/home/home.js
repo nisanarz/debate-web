@@ -2,10 +2,11 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import homeComponent from './home.component';
 import ngMaterial from 'angular-material';
+import firebase from 'angularfire';
 
 
 let homeModule = angular.module('home', [
-  uiRouter, ngMaterial
+  uiRouter, ngMaterial, firebase
 ])
 
 .config(($stateProvider, $urlRouterProvider) => {

@@ -16,10 +16,11 @@
     <div class="row">
         <md-input-container class="md-block" flex-gt-sm>
                 <label>First name</label>
-                <input ng-model="vm.user.firstName">
+                <input ng-model="nisan.text">
          </md-input-container>
          <div class="col-sm-6">
          <a data-toggle="modal" data-target="#myModal" class="btn btn-circle btn-primary" ng-click="vm.changeDB(vm.user.firstName)"><i class="glyphicon glyphicon-ok"></i></a>
+         <p> You Said: {{ nisan.text }} . </p>
          <!--use this circle buttons here: http://bootsnipp.com/snippets/8deZ-->
         </div>
     </div>
