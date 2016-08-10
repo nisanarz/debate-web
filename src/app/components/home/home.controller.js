@@ -5,12 +5,6 @@ class HomeController {
       firstName: "",
       lastName: ""
     }
-    const config = {
-        apiKey: "AIzaSyB_QbI3_9CWew8XMeHfu6CKXYG147w0L0s",
-        authDomain: "debatedb-16357.firebaseapp.com",
-        databaseURL: "https://debatedb-16357.firebaseio.com/",
-    };
-    firebase.initializeApp(config);
 
     //var ref = firebase.database().ref().child("nisan").set("Asdasdasd");
     var ref = firebase.database().ref().child("nisan");
