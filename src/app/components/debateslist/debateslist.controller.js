@@ -1,7 +1,6 @@
 class DebateslistController {
   constructor() {
     this.name = 'debateslist';
-
   }
 
 }
