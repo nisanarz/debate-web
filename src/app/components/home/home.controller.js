@@ -7,35 +7,27 @@ class HomeController {
     }
     this.counter=1;
     this.names = ["nisan","dima","adi" ];
+    this.namesWithRates = [ 
+      {name1:"nisan",  name2:"lev",  rate:90 },
+      {name1:"dima",   name2:"john",   rate:57 },
+      {name1:"adi",    name2:"mike",    rate:15 } 
+    ];
     this.animationsEnabled = true;
-
-    //var ref = firebase.database().ref().child("nisan").set("Asdasdasd");
-    var ref = firebase.database().ref().child("nisan");
-    this.syncObject = $firebaseObject(ref);
-    this.syncObject.$bindTo($scope, "nisan");
+    var ref = firebase.database().ref().child("debates");
+    $firebaseObject(ref).$bindTo($scope, "debates");
   }
-
-  changeDB(val){
-    // mainApp.database().ref("/").child('nisan').set(val);
-
-    //var ref = new Firebase("https://debatedb-16357.firebaseio.com/nisan");
-
-    console.log(this.syncObject);
-    
-    // synchronize the object with a three-way data binding
-    // click on `index.html` above to see it used in the DOM!
-    //syncObject.$bindTo($scope, "data");
-
-  }
+  
 
   openCreateModal(){
     var modalInstance = $uibModal.open({
       animation: this.animationsEnabled,
       templateUrl: 'createDebateModalContent.html',
       controller: 'ModalInstanceCtrl',
-   })
+      size:100
+   });
   };
     
 }
 
 export default HomeController;
+
