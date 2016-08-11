@@ -1,16 +1,63 @@
 class DebateController {
-  constructor() {
+  constructor($scope, $firebaseObject, $rootScope) {
     this.name = 'debate';
-    this.cards = [1,2];
-    this.msg = "";
+
+
+    this.currentUserID = $rootScope.currentUserID;
+    this.currentUserName = $rootScope.currentUserName;
+    //get debate object and users objects
+    var ref = firebase.database().ref().child("debates/1");
+    this.syncObjectDebate = $firebaseObject(ref);   
+    this.syncObjectDebate.$bindTo($scope, "debateData");
+
+    this.commentCounter = 0;
+    this.msgCounter = 0;
+    this.currState = 1;
+    this.cards = [];
+    this.comments = [];
     this.recommendations = [
       {link:"http://edition.cnn.com/2016/08/10/politics/trump-second-amendment/index.html",img:"assets/articles/test1.JPG"},
       {link:"2",img:"dsfad"},
       {link:"3",img:"dsfad"},
       {link:"4",img:"dsfad"}
     ]
+    this.checkDisable = true;
+
+    
+  }
+
+  postMsg(data){
+
+
+    this.cards[this.msgCounter] = data;
+    this.currState = this.currState + 1;
+    this.msgCounter = this.msgCounter +1;
+    this.checkDisable = !this.checkDisable;
+
+  }
+
+  postComment(data){
+    this.comments[this.commentCounter] = data;
+    this.commentCounter = this.commentCounter +1;
   }
     
 }
 
 export default DebateController;
+
+
+
+
+
+    //this.syncObject.chatA[0] = this.inputMsg;
+    // firebase.database().ref().child("debates/3").set({
+    //   id: 3,
+    //   chatA: ["hello", "htht", "Werwer"],
+    //   chatB: ["qwe", "qweqwe", "qweqsad"],
+    //   userA: 1,
+    //   userB: 5,
+    //   rank: 34,
+    //   tags: ["qwe" , "qwe"],
+    //   status: 1,
+    //   comments:[{user: 1, msg: "erwer"},{user:4, msg: "dfsdf"}]
+    // })

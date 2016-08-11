@@ -1,6 +1,10 @@
 class AppController {
-  constructor() {
+  constructor($rootScope) {
     this.name = 'app';
+    $rootScope.currentUserID = 3;
+    $rootScope.currentUserName;
+    $rootScope.isPending=false;
+    $rootScope.isLive=false;
 
     const config = {
         apiKey: "AIzaSyB_QbI3_9CWew8XMeHfu6CKXYG147w0L0s",
