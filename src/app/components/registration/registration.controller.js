@@ -1,5 +1,5 @@
 class RegistrationController {
-  constructor($scope) {
+  constructor($scope, $rootScope) {
     this.name = 'registration';
     
     $scope.showHints = true;
@@ -12,7 +12,21 @@ class RegistrationController {
     };
     
   }
-  
+
+  click1(){
+    $rootScope.currentUserID = 1;
+    $rootScope.currentUserName = "nisanarz";
+  }
+
+    click2(){
+    $rootScope.currentUserID = 2;
+    $rootScope.currentUserName = "adibid";
+  }
+
+    click3(){
+    $rootScope.currentUserID = 3;
+    $rootScope.currentUserName = "levkor";
+  }
 }
 
 export default RegistrationController;

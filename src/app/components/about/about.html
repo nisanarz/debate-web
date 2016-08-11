@@ -1,18 +1,80 @@
-    <div class="container">
+<div class="container">
+    <!--<div id="about" class="col-md-12" style="background-color: #FAFAD2; height: 500px; border-radius: 12px;">
+    <p style="">Welcome to True Talk!</p>
+    </div>-->
 
-        <div class="col-sm-6">
-        COOL
-        </div>
 
-        <div class="col-sm-6">
-        im inside the ABOUT component!
-        </div>
-        
         <!--<div>
         <h1>Found in {{ vm.name }}.html</h1>
         <uib-timepicker ng-model="vm.mytime" ng-change="vm.changed()" hour-step="vm.hstep" minute-step="vm.mstep" show-meridian="vm.ismeridian"></uib-timepicker>
         </div>-->
 
-        
-
+    <div class="col-sm-10">
+        <div class="row">
+            <form name="userForm">
+            <md-input-container class="md-block col-md-6" flex-gt-sm>
+            <label>Debate title</label>
+            <input md-maxlength="50" required name="name" ng-model="user.name" />
+            <div class="hint" ng-if="false">Tell us what we should call you!</div>
+            <div ng-messages="userForm.name.$error" ng-if="true">
+                <div ng-message="required">*Required.</div>
+                <div ng-message="md-maxlength">The title has to be less than 50 characters long.</div>
+            </div>
+            </md-input-container>
+        </div>
+        <div class="row">
+            <md-input-container class="md-block col-md-6" flex-gt-sm>
+            <label>Link Reference</label>
+            <input ng-model="user.lastname" />
+            <div class="hint" ng-if="showHints">Tell us what we should call you!</div>
+            <div ng-messages="userForm.name.$error" ng-if="!showHints">
+            </div>
+            </md-input-container>
+            </form>
+        </div>
     </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Your Opinion</label>
+                <textarea ng-model="debateData.chatA[vm.msgCounter]" rows="6" style="background-color: white"></textarea>
+            </md-input-container>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            <md-input-container>
+            <label>Level</label>
+                <md-select ng-model="vm.selectedLevel">
+                <md-option ng-repeat="name in vm.levels" value="{{name}}" >
+                    {{name}}
+                </md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+        <div class="col-md-1">
+            <md-input-container>
+                <label>Rounds</label>
+                <md-select ng-model="vm.selectedRound">
+                <md-option ng-repeat="name in vm.rounds" value="{{name}}" >
+                    {{name}}
+                </md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+            <div class="col-md-8">
+                <md-input-container class="md-block col-md-6" flex-gt-sm>
+                <label>Tags</label>
+                <input ng-model="user.lastname" />
+                <div class="hint" ng-if="showHints">Tell us what we should call you!</div>
+                <div ng-messages="userForm.name.$error" ng-if="!showHints">
+                </div>
+                </md-input-container>
+                </form>
+            </div>
+            <div class="col-md-1">
+                <button class="btn btn-primary" type="button">Submit
+            </div>
+        </div>  
+    </div>
+</div>
