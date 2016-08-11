@@ -4,7 +4,7 @@ import debateComponent from './debate.component';
 
 
 let debateModule = angular.module('debate', [
-  uiRouter
+ 'textAngular'
 ])
 
 .config(($stateProvider, $urlRouterProvider) => {

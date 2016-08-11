@@ -1,5 +1,6 @@
 <div class="container">
     <div id="debateContainer" class="row" >
+
         <div id="debateContent" class="col-md-6 scroll" style="background-color: red; height: 350px">
             <div class="col-md-10 row">
                 <md-card ng-repeat="item in vm.cards" ng-cloak>
@@ -21,10 +22,16 @@
                 </md-input-container> 
             </div>               
         </div>               
-        <div id="debateTextEditor" class="col-md-6" style="background-color: blue; height: 350px">bla</div>
+       <div id="debateTextEditor" class="col-md-6" style="height: 350px">
+           <text-angular ta-toolbar="[['h1','h2','h3'],['bold','italics']]"></text-angular>
+            <md-button>Post</md-button>
+        </div> 
     </div>
     <div id="debateComments" class="row" style="background-color: black; height: 50px">
-    </div>
+            <textarea style="width:100%; resize: none" readonly>
+                put comments here
+            </textarea> 
+        </div>
     <div id="debateRecommedetions" class="row" style="background-color: green; height: 50px">
     </div>
 </div>

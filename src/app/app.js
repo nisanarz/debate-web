@@ -8,6 +8,7 @@ import firebase from 'angularfire';
 import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
+import '../../node_modules/textangular/dist/textAngular-sanitize.min';
 
 // firebase = require('../../node_modules/firebase/app');
 //     require("../../node_modules/firebase/auth");
@@ -31,7 +32,8 @@ angular.module('app', [
     ngAria,
     firebase,
     Common.name,
-    Components.name
+    Components.name, 
+    require('textAngular')
 ])
 .config(($stateProvider, $urlRouterProvider) => {
  $stateProvider
