@@ -9,12 +9,12 @@
     <div class="row">
         <div class="col-md-4">
             <label class="state-header">Favorite Debates</label>
-            <div class="col-md-12" ng-repeat="name in vm.names">
+            <div class="col-md-12" ng-repeat="item in vm.namesWithRates">
                 <md-card>
                     <md-card-title>
                         <md-card-title-text>
                             <a ui-sref="debate"><span class="md-headline">Favorite Debate # {{vm.counter }}</span></a><br/>
-                            <span class="md-headline">{{name}}</span>
+                            <span style="align-self: center" class="md-headline">{{item.name1}} vs {{item.name2}}</span>
                         </md-card-title-text>
                     </md-card-title>
                     <md-card-content>
@@ -31,7 +31,12 @@
                         </md-tooltip>
                     </md-button>
                     <md-button class="md-icon-button" aria-label="Share">
+                       <a id="fb-share" style='text-decoration:none;' 
+                       type="icon_link" 
+                       onClick="window.open('http://www.facebook.com/sharer.php?s=100&p[title]=My Debate&p[summary]=Share this debate with your friends&p[url]=http://www.google.com&p[images][0]=YOUR_IMAGE','sharer','toolbar=0,status=0,width=580,height=325');" 
+                       href="javascript: void(0)">
                         <md-icon md-svg-icon="assets/icons/share-icon.svg"></md-icon>
+                        </a>
                     </md-button>
                     </md-card-actions>
                 </md-card>
@@ -42,12 +47,19 @@
 
         <div class="col-md-4">
             <label class="state-header">Top Rated Debates</label>
-            <div class="col-md-12" ng-repeat="name in vm.names">
+            <div class="col-md-12" ng-repeat="item in vm.namesWithRates">
                 <md-card>
                     <md-card-title>
                         <md-card-title-text>
-                            <a ui-sref="debate"><span class="md-headline">Top Debate # {{vm.counter }}</span></a><br/>   
-                            <span class="md-headline">{{name}}</span>
+                            <span class="md-headline">
+                                <a ui-sref="debate">
+                                    Top Debate # {{vm.counter }}
+                                </a>
+                                <md-icon md-svg-icon="assets/icons/heart-icon.svg"></md-icon>
+                                    {{item.rate}}
+                                </span>
+                                <br/>   
+                            <span style="align-self: center" class="md-headline">{{item.name1}} vs {{item.name2}}</span>
                         </md-card-title-text>
                     </md-card-title>
                     <md-card-content>
@@ -79,8 +91,17 @@
                 <md-card>
                     <md-card-title>
                         <md-card-title-text>
-                            <a ui-sref="debate"><span class="md-headline">Pending Debate # {{vm.counter }}</span></a><br/>   
-                            <span class="md-headline">{{name}}</span>
+                                <span class="md-headline" >
+                                    <md-button style="display:block" ui-sref="debate" aria-label="button-label" class="md-raised md-primary" >
+                                       accept the challenge
+                                    </md-button>
+                                    <!--<md-icon style="height:50px" md-svg-src="assets/icons/fight-icon.svg"></md-icon>-->
+                                  </span>
+                                  <md-icon style="display:block;height:100px;width: 100px" md-svg-icon="assets/icons/fight-icon.svg"></md-icon>
+                            <br/>   
+                            <span style="align-self: center"  class="md-headline">{{name}} is waiting...
+                                <md-icon md-svg-icon="assets/icons/live-icon.svg"></md-icon>
+                            </span>
                         </md-card-title-text>
                     </md-card-title>
                     <md-card-content>
@@ -97,8 +118,12 @@
                         </md-tooltip>
                     </md-button>
                     <md-button class="md-icon-button" aria-label="Share">
+                       <a id="fb-share" style='text-decoration:none;' 
+                       type="icon_link" 
+                       onClick="window.open('http://www.facebook.com/sharer.php?s=100&p[title]=My Debate&p[summary]=Share this debate with your friends&p[url]=http://www.google.com&p[images][0]=YOUR_IMAGE','sharer','toolbar=0,status=0,width=580,height=325');" 
+                       href="javascript: void(0)">
                         <md-icon md-svg-icon="assets/icons/share-icon.svg"></md-icon>
-                        
+                        </a>
                     </md-button>
                     </md-card-actions>
                 </md-card>
