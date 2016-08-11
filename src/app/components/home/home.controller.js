@@ -1,5 +1,5 @@
 class HomeController {
-  constructor($scope, $firebaseObject) {
+  constructor($scope, $firebaseObject,$uibModal) {
     this.name = 'home';
     this.user={
       firstName: "",
@@ -7,6 +7,7 @@ class HomeController {
     }
     this.counter=1;
     this.names = ["nisan","dima","adi" ];
+    this.animationsEnabled = true;
 
     //var ref = firebase.database().ref().child("nisan").set("Asdasdasd");
     var ref = firebase.database().ref().child("nisan");
@@ -27,6 +28,13 @@ class HomeController {
 
   }
 
+  openCreateModal(){
+    var modalInstance = $uibModal.open({
+      animation: this.animationsEnabled,
+      templateUrl: 'createDebateModalContent.html',
+      controller: 'ModalInstanceCtrl',
+   })
+  };
     
 }
 
