@@ -1,19 +1,111 @@
-<div class="container">
+<div class="container" style="background-color:#CCD6DE">
     <div class="row">
-        <div class="col-sm-6">
-        COOL
+        <!--<div class="col-sm-offset-5 col-sm-2 text-center" style="padding-bottom: 15px;">
+            <md-button class="btn12">create new debate </md-button>
+        </div>-->
+        
+
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <label class="state-header">Favorite Debates</label>
+            <div class="col-md-12" ng-repeat="name in vm.names">
+                <md-card>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <a ui-sref="debate"><span class="md-headline">Favorite Debate # {{vm.counter }}</span></a><br/>
+                            <span class="md-headline">{{name}}</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                    <p>
+                        The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                        two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                    </p>
+                    </md-card-content>
+                    <md-card-actions layout="row" layout-align="end center">
+                    <md-button class="md-icon-button" aria-label="Favorite">
+                        <md-icon md-svg-icon="assets/icons/favorite-icon.svg"></md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="Share">
+                        <md-icon md-svg-icon="assets/icons/share-icon.svg"></md-icon>
+                    </md-button>
+                    </md-card-actions>
+                </md-card>
+                <md-card>
+            </div>
+        </div>
+        
+
+        <div class="col-md-4">
+            <label class="state-header">Top Rated Debates</label>
+            <div class="col-md-12" ng-repeat="name in vm.names">
+                <md-card>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <a ui-sref="debate"><span class="md-headline">Top Debate # {{vm.counter }}</span></a><br/>   
+                            <span class="md-headline">{{name}}</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                    <p>
+                        The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                        two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                    </p>
+                    </md-card-content>
+                    <md-card-actions layout="row" layout-align="end center">
+                    <md-button class="md-icon-button" aria-label="Favorite">
+                        <md-icon md-svg-icon="assets/icons/favorite-icon.svg"></md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="Share">
+                        <md-icon md-svg-icon="assets/icons/share-icon.svg"></md-icon>
+                    </md-button>
+                    </md-card-actions>
+                </md-card>
+                <md-card>
+            </div>
         </div>
 
-        <div class="col-sm-6">
-        im inside the HOME bla!
+
+        <div class="col-md-4">
+            <label class="state-header">Pendding Debates</label>
+            <div class="col-md-12" ng-repeat="name in vm.names">
+                <md-card>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <a ui-sref="debate"><span class="md-headline">Pending Debate # {{vm.counter }}</span></a><br/>   
+                            <span class="md-headline">{{name}}</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                    <p>
+                        The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                        two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                    </p>
+                    </md-card-content>
+                    <md-card-actions layout="row" layout-align="end center">
+                    <md-button class="md-icon-button" aria-label="Favorite">
+                        <md-icon md-svg-icon="assets/icons/favorite-icon.svg"></md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="Share">
+                        <md-icon md-svg-icon="assets/icons/share-icon.svg"></md-icon>
+                    </md-button>
+                    </md-card-actions>
+                </md-card>
+                <md-card>
+            </div>
         </div>
     </div>
-    <!--<div>
-    <h1>Found in {{ vm.name }}.html</h1>
-    <uib-timepicker ng-model="vm.mytime" ng-change="vm.changed()" hour-step="vm.hstep" minute-step="vm.mstep" show-meridian="vm.ismeridian"></uib-timepicker>
-    </div>-->
 
     <div class="row">
+        <div class="offset-md-11 col-md-1 text-center">
+            <md-button class="md-fab md-primary btn2" aria-label="Create new debate">
+            <md-icon md-svg-src=""></md-icon>
+            </md-button>
+        </div>
+    </div>
+
+    <!--<div class="row">
         <md-input-container class="md-block" flex-gt-sm>
                 <label>First name</label>
                 <input ng-model="nisan.text">
@@ -21,10 +113,10 @@
          <div class="col-sm-6">
          <a data-toggle="modal" data-target="#myModal" class="btn btn-circle btn-primary" ng-click="vm.changeDB(vm.user.firstName)"><i class="glyphicon glyphicon-ok"></i></a>
          <p> You Said: {{ nisan.text }} . </p>
-         <!--use this circle buttons here: http://bootsnipp.com/snippets/8deZ-->
+         
         </div>
-    </div>
-    
+    </div>-->
+    <!--use this circle buttons here: http://bootsnipp.com/snippets/8deZ-->
 </div>
 
 

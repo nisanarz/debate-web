@@ -5,6 +5,8 @@ class HomeController {
       firstName: "",
       lastName: ""
     }
+    this.counter=1;
+    this.names = ["nisan","dima","adi" ];
 
     //var ref = firebase.database().ref().child("nisan").set("Asdasdasd");
     var ref = firebase.database().ref().child("nisan");

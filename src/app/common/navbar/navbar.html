@@ -7,7 +7,7 @@
             </ul>
 </nav>-->
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top">
    <div class="container">
       <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
@@ -16,7 +16,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" ui-sref-active="active" ui-sref="first">Project theme</a>
+          <a class="navbar-brand" ui-sref-active="active" ui-sref="first">
+              <md-icon md-svg-icon="assets/icons/chat-icon.svg"></md-icon>
+              <i>Project theme<i></a>
       </div>
 
       <div id="navbar" class="navbar-collapse collapse" ng-class="!navCollapsed && 'in'" aria-expanded="true">
