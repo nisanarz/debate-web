@@ -1,7 +1,7 @@
 <div class="container">
     <div id="debateContainer" class="row" >
 
-        <div id="debateContent" class="col-md-6 scroll" style="background-color: red; height: 350px">
+        <div id="debateContent" class="col-md-{{true?6:12}} scroll" style="background-color: gray; height: 350px">
             <div class="col-md-10 row">
                 <md-card ng-repeat="item in vm.cards" ng-cloak>
                     <md-card-header style="padding-bottom:4px">
@@ -22,16 +22,29 @@
                 </md-input-container> 
             </div>               
         </div>               
-       <div id="debateTextEditor" class="col-md-6" style="height: 350px">
+        <div id="debateTextEditor" class="col-md-6" ng-show="true" style="height: 350px">
            <text-angular ta-toolbar="[['h1','h2','h3'],['bold','italics']]"></text-angular>
-            <md-button>Post</md-button>
+            <md-button style="background-color: gray">Post</md-button>
         </div> 
     </div>
-    <div id="debateComments" class="row" style="background-color: black; height: 50px">
-            <textarea style="width:100%; resize: none" readonly>
-                put comments here
-            </textarea> 
+    <div id="debateComments" class="row">
+        <div id="commentsCards" style="background-color: blue">
+            <div class="row">
+                <md-list-item class="md-2-line">
+                    <img ng-src="{{todos[0].face}}?20" class="md-avatar" alt="{{todos[0].who}}" />
+                    <div class="md-list-item-text">
+                        <h3>{{ UserName }} UserName </h3>
+                        <p>The comment</p>
+                    </div>
+                </md-list-item>
+            </div> 
         </div>
+        <div id="commentInput">
+            <textarea style="resize: none; width: 100%; line-height: 1">
+                put comments here
+            </textarea>
+        </div> 
+    </div>
     <div id="debateRecommedetions" class="row" style="background-color: green; height: 50px">
     </div>
 </div>
