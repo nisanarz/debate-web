@@ -26,6 +26,16 @@
             <li ui-sref-active="active"><a ui-sref="home" ng-click="navCollapsed = true">Home</a></li>
             <li ui-sref-active="active"><a ui-sref="debate" ng-click="navCollapsed = true">Debate</a></li>
             <li ui-sref-active="active"><a ui-sref="about" ng-click="navCollapsed = true">About</a></li>
+            <li ui-sref-active="active">
+            <li style="display:-webkit-inline-box;">
+                    <input class="form-control searchDropDown"
+                        type="text" 
+                        ng-model="vm.selected" 
+                        uib-typeahead="state for state in vm.states | filter:$viewValue | limitTo:3" 
+                        ng-keypress="vm.fooEnter($event)">
+                        <md-icon style="margin-top:12px; margin-left:5px;" md-svg-src="assets/icons/search-icon.svg"></md-icon>
+                        </input>     
+            </li>
           </ul>
         </div>
     </div>    
