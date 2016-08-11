@@ -9,7 +9,7 @@ class HomeController {
     this.names = ["nisan","dima","adi" ];
     this.namesWithRates = [ 
       {name1:"nisan",  name2:"lev",  rate:90 },
-      {name1:"dima",   name2:"jon",   rate:57 },
+      {name1:"dima",   name2:"john",   rate:57 },
       {name1:"adi",    name2:"mike",    rate:15 } 
     ];
     this.animationsEnabled = true;
