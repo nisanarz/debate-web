@@ -45,7 +45,8 @@ angular.module('app', [
       template: '<home></home>'
     })
 })
-.component('app', AppComponent);
+.component('app', AppComponent)
+
 
 class Log {
     constructor(){
