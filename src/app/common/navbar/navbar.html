@@ -17,7 +17,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" ui-sref-active="active" ui-sref="first">
-              <md-icon md-svg-icon="assets/icons/chat-icon.svg"></md-icon>
+              <md-icon md-svg-src="http://imgh.us/chat-icon_1.svg"></md-icon>
               <i>PoliTalk<i></a>
       </div>
 
@@ -33,7 +33,7 @@
                             ng-model="vm.selected" 
                             uib-typeahead="state for state in vm.states | filter:$viewValue | limitTo:3" 
                             ng-keypress="vm.fooEnter($event)">
-                            <md-icon style="margin-top:12px; margin-left:5px;" md-svg-src="assets/icons/search-icon.svg"></md-icon>
+                            <md-icon style="margin-top:12px; margin-left:5px;" md-svg-src="http://imgh.us/search-icon_2.svg"></md-icon>
                             </input>     
                 </li>
                 <li ng-show="vm.currState == null" style="float:right;list-style-type: none;display:flex;margin-right: 8px" ui-sref-active="active"><a ui-sref="registration" ng-click="navCollapsed = true" style="text-decoration:blink">Login</a></li>
