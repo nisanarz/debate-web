@@ -6,14 +6,14 @@ class RegistrationController {
     this.click1 = function (){
     console.log($rootScope.currentUserID);
     console.log($rootScope.currentUserName);
-    $rootScope.currentUserID = 1;
+    $rootScope.currentUserID = 0;
     $rootScope.currentUserName = "nisanarz";
     console.log($rootScope.currentUserID);
     console.log($rootScope.currentUserName);
   }
 
     this.click2 = function (){
-    $rootScope.currentUserID = 2;
+    $rootScope.currentUserID = 1;
     $rootScope.currentUserName = "adibid";
   }
 
