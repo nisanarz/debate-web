@@ -96,7 +96,7 @@
                                     </md-button>
                                     <!--<md-icon style="height:50px" md-svg-src="assets/icons/fight-icon.svg"></md-icon>-->
                                   </span>
-                                  <md-icon style="display:block;height:100px;width: 100px" md-svg-icon="assets/icons/fight-icon.svg"></md-icon>
+                                  <md-icon style="display:block;height:50px;width: 50px;margin-top: 8px" md-svg-icon="assets/icons/fight-icon.svg"></md-icon>
                             <br/>   
                             <span style="align-self: center"  class="md-headline">{{name}} is waiting...
                                 <md-icon md-svg-icon="assets/icons/live-icon.svg"></md-icon>
@@ -111,7 +111,7 @@
                     </md-card-content>
                     <md-card-actions layout="row" layout-align="end center">
                     <md-button class="md-icon-button" aria-label="Favorite">
-                        <md-icon md-svg-icon="assets/icons/favorite-icon.svg"></md-icon>
+                        <md-icon md-svg-icon="assets/icons/favorite-icon.svg" ></md-icon>
                         <md-tooltip md-direction="down" style="font-size:20px">
                             Add to favorite
                         </md-tooltip>
@@ -133,7 +133,7 @@
 
     <div class="row">
         <div class="offset-md-11 col-md-1 text-center">
-            <md-button class="md-fab md-primary btn2" aria-label="Create a new debate" ng-click="vm.openCreateModal()">
+            <md-button class="md-fab md-primary btn2" aria-label="Create a new debate" ui-sref="about">
                 <md-icon md-svg-src="assets/icons/plus.svg"></md-icon>
                 <md-tooltip md-direction="top" style="font-size:20px">
                     Create a new debate
