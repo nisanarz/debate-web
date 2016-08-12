@@ -1,13 +1,13 @@
 <div class="container">
     <div id="debateContainer" class="row" >
 
-        <div id="debateContent" class="col-md-{{(vm.currentUserID !== 3)?6:12}} scroll" style=" height: 350px; border-style: solid; border-width: 1px; border-color: gray">
+        <div id="debateContent" class="col-md-{{(vm.currentUserID !== 3)?6:12}} scroll" >
             <div class="col-md-10 row" ng-repeat="item in vm.cards">
                 <md-card  ng-cloak>
                     <md-card-header style="padding-bottom:4px">
                         <md-card-avatar>
-                            <img ng-if="vm.currentUserID == 0" ng-src="assets/monsters/green.png"></img>
-                            <img ng-if="vm.currentUserID == 1" ng-src="assets/monsters/blue.png"></img>
+                            <img ng-if="vm.currentUserID == 0" ng-src="https://lh3.googleusercontent.com/7zxpiHSUdrhlV5yK0nxcs8KiCD9Wq4P9V45xDIMBWdIA9o6QZ5h8QP_W_qyPgKYUUXjj7FY2yUnhepUVgveTYiLIP3P9atAB5ErVpqtug-T2u7fTODzS1K5gyAJMPUUDYvnDbymasx3hYmVUxP_RFfT2027HUnYg-Gk_Vr0wkjQXmCL4hPRgW68wSkhbNNsSqe4lPLSyxITdSsLaERIqLwYDzVFM7HFgnSIjoa1WErmscdXzFiqH0JjiZ2y9qNsdEfp06UBhMTb6tqxGn1MxCSg5Iq5FbFtWMF0CqVY3eFdZuuX9RQw5fuAoxzv3ADpbx7LR-8S4OuMKOWua0a6Pq3zbK8bCDPyyfVmKqFkqgqmGKDhmfteO3Y53nN8_WVsrWYIZv3XqLWIYxMg24isiccYKi4PUthe4B7K3dQ5lfuut0GjvKx_hcpHzS5CSDUgBqvevvR9fndvQY0327VFlZ2Zoe60ZXSheRfnQ-3TfpnH8BoLdqQrgSgYPaWvZjJOfp9I3HkPBY9sMTPqCZNA8AFkodaxqE1SDjJvbppluJpjyYglDU6QTebuk343niu-VUkiWu1BuwTv1l7mhCfWMFsPz5tQoPw=w630-h671-no"></img>
+                            <img ng-if="vm.currentUserID == 1" ng-src="https://lh3.googleusercontent.com/AX-wagCw6NGv40HLrT1iG5EcC5TpFZ8l3vQN-cUhSkuEJFfu2xemvRPdgXdUuNyOLQa0URgl2nZfr-qWB17Vy_ftOv97wFRXtI1j3BLrUSftzpXREAdZNw_mT0wsyeBwBZrjiaVj-ByMBTqEc0Zxg2unbVo8DxlxyjQr_hHpHRkYKR7F5hXo0mWNAaqwpgHdwvTyHI5QXNzDlSbhJdOjIYlIexRaMRraRN6DNSJtIZlsVmgxLxW3zV__4xi-ATKqDpyDpdPahH9OGk_OTUQL_Zxy7Trcse_WT2-REMBVe2ybyYhfiqAGYxI1gvJoXVV6t9qgUo9xo9um-mYf7_oFETZBE0Ojtkl6LC7SINGnEaQZ5FmaJdMNsebvs1UA-WsBsFWPflz_xBsURfDWpeRDZf5zPwaNFL5yoBSqPyKgOoh_n0NAIu3IEpJfpZnc4Kw9S7nxrpJ4suYr_UY6egJKCd6Kr0hUKQNEZekr9yxxESdzQoxMcx0GHXroqfiiBSiFkgKQjweBCU9O3ZY0lKshqeDIspcMqV9nvfYuULYV-ty5fkX5dkj-OK9SgkZX7RQ1sqFL3UYvn6LLujp8TMCmsTKp54wQiQ=s671-no"></img>
                             <!--<img ng-src="(debateData.users[vm.currentUserID]).img"></img>-->
                         </md-card-avatar>
                         <md-card-header-text>
@@ -41,7 +41,7 @@
                     <md-card ng-repeat="item in vm.comments" >
                         <md-card-header style="padding-bottom:4px">
                             <md-card-avatar>
-                                <img ng-if="vm.currentUserID == 3" ng-src="assets/monsters/yellow.png"></img>
+                                <img ng-if="vm.currentUserID == 3" ng-src="https://lh3.googleusercontent.com/lfhSt0ReDfKu43O726aaM93eQSreuadUWAxKjqbdgUVNvy3MoaDXPL2Zp_ydnF4MJYYhSBhBJRm1ACDk5sn7WHdSvvZ4JIp6OEfkSsSqg_aksOGoX6hUuLRQgSdwevK45ArzMf5--IVhOj7BqxzfTo0LehVndme3sQqm4eSOGakIXqk4DK9NB7b86XkVsJVDe707NRgJs0XNQGhMOtq_vyQixp52-Ya_0OmtQfSQsvRox-VOVclYv0zdfkUKs1hWXAb0HRtIknaV8o6qiuABT9p-fHXmvMp1D9m9BuaixR2dHPe0Ii-yTftPoiuJ4PPMqclqRHEyiWkZ2_t1UO-_SljZ921facn5EIiXH2Hvi2SGonwxQdhXtd8tVESvzuGiAmReAUAEmxnseSWvpeOctcIUCkpq1uHrH5dLMjHF8x4OStLC1oydPWvH6kL3YZGK-t4YayKeSoQMza2bbB1cbrOV96kht8qGe8AeQSUTqCmA5tCiPOOhjEXfSYhbbmJTge31sr94vLTksDKQ_ivSuIxq8NWhFdmGrzsRsezrHc_7l3yUvLB9MJg8iD06ErXddpe7k9Q9KQkxehgtwy-vshTyWHARpw=s671-no"></img>
                             
                             </md-card-avatar>
                             <md-card-header-text>
