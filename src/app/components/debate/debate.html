@@ -11,7 +11,7 @@
                             <!--<img ng-src="(debateData.users[vm.currentUserID]).img"></img>-->
                         </md-card-avatar>
                         <md-card-header-text>
-                            <span class="md-title">{{vm.currentUserName}}</span>
+                            <span class="md-title">{{debateData.users[vm.cards.length % 2].name}}</span>
                         </md-card-header-text>
                     </md-card-header>
                     <md-card-content style="padding-top:4px; padding-bottom:6px">
@@ -49,7 +49,7 @@
                             </md-card-header-text>
                         </md-card-header>
                         <md-card-content style="padding-top:4px; padding-bottom:6px">
-                            {{item}}
+                            {{item.$value}}
                         </md-card-content>
                     </md-card>
                 </div>
@@ -59,9 +59,9 @@
             <div class="col-md-12">
             <md-input-container class="md-block offset-md-1 col-md-10" flex-gt-sm>
             <label>Add comment</label>
-            <input md-maxlength="130" ng-model="debateData.comments[vm.commentCounter]" />
+            <input md-maxlength="130" ng-model="vm.currComment" />
             </md-input-container>
-            <md-button style="background-color: gray" ng-click="vm.postComment(debateData.comments[vm.commentCounter])">Post</md-button>
+            <md-button style="background-color: gray" ng-click="vm.postComment(vm.currComment)">Post</md-button>
             </div>
         </div>
     </div>

@@ -13,14 +13,15 @@ class DebateController {
     this.syncObjectDebate.$bindTo($scope, "debateData");
 
     var ref2 = firebase.database().ref().child("debates/1/chatA");
+    var ref3 = firebase.database().ref().child("debates/1/comments");
     
     
 
     this.commentCounter = 0;
     this.msgCounter = 0;
     this.currState = 1;
-    this.cards  = $firebaseArray(ref2);;
-    this.comments = [];
+    this.cards  = $firebaseArray(ref2);
+    this.comments = $firebaseArray(ref3);;
     this.recommendations = [
       {link:"http://www.haaretz.com/israel-news/1.736237",img:"assets/articles/img1.JPG"},
       {link:"http://edition.cnn.com/2016/03/01/world/israel-deadly-navigation-mistake/index.html",img:"assets/articles/img2.JPG"},
@@ -29,6 +30,7 @@ class DebateController {
     ]
     this.checkDisable = false;
     this.currMsg= "";
+    this.currComment= "";
     
   }
 
@@ -45,8 +47,7 @@ class DebateController {
   }
 
   postComment(data){
-    debugger;
-    this.comments[this.commentCounter] = data;
+    this.comments.$add(data);
     this.commentCounter = this.commentCounter +1;
     var element = angular.element( document.querySelector( '#commentsCards' ) );
     this.hhh = element[0].scrollHeight;
