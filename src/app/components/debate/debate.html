@@ -1,7 +1,7 @@
 <div class="container">
     <div id="debateContainer" class="row" >
 
-        <div id="debateContent" class="col-md-{{(vm.currentUserID !== 3)?6:12}} scroll" style=" height: 350px; border-style: solid; border-width: 1px; border-color: gray">
+        <div id="debateContent" class="col-md-{{(vm.currentUserID !== 3)?6:12}} scroll" >
             <div class="col-md-10 row" ng-repeat="item in vm.cards">
                 <md-card  ng-cloak>
                     <md-card-header style="padding-bottom:4px">
