@@ -5,6 +5,8 @@ class DebateController {
 
     this.currentUserID = $rootScope.currentUserID;
     this.currentUserName = $rootScope.currentUserName;
+
+
     //get debate object and users objects
     var ref = firebase.database().ref().child("debates/1");
     this.syncObjectDebate = $firebaseObject(ref);   
@@ -21,7 +23,7 @@ class DebateController {
       {link:"http://time.com/4421400/transgender-u-s-military-israeli-army-idf/",img:"assets/articles/img3.JPG"},
       {link:"http://www.jpost.com/Israel-News/IDF-soldiers-wounded-by-stray-bullets-in-separate-incidents-462698",img:"assets/articles/img4.JPG"}
     ]
-    this.checkDisable = true;
+    this.checkDisable = false;
 
     
   }

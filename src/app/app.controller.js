@@ -1,8 +1,8 @@
 class AppController {
   constructor($rootScope) {
     this.name = 'app';
-    $rootScope.currentUserID = 3;
-    $rootScope.currentUserName;
+    $rootScope.currentUserID = null;
+    $rootScope.currentUserName = null;
     $rootScope.isPending=false;
     $rootScope.isLive=false;
 

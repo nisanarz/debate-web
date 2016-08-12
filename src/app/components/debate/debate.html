@@ -2,8 +2,8 @@
     <div id="debateContainer" class="row" >
 
         <div id="debateContent" class="col-md-{{(vm.currentUserID !== 3)?6:12}} scroll" style=" height: 350px; border-style: solid; border-width: 1px; border-color: gray">
-            <div class="col-md-10 row">
-                <md-card ng-repeat="item in vm.cards" ng-cloak>
+            <div class="col-md-10 row" ng-repeat="item in vm.cards">
+                <md-card  ng-cloak>
                     <md-card-header style="padding-bottom:4px">
                         <md-card-avatar>
                             <img ng-if="vm.currentUserID == 1" ng-src="assets/monsters/green.png"></img>
@@ -30,7 +30,7 @@
             <textarea ng-model="debateData.chatA[vm.msgCounter]" rows="9" style="background-color: white"></textarea>
             </md-input-container>
 
-            <md-button style="background-color: gray" ng-disabled="vm.checkDisable" ng-click="vm.postMsg(debateData.chatA[vm.msgCounter])">Post</md-button>
+            <md-button style="background-color: gray" ng-disabled="vm.currState % 2 !== vm.currentUserID" ng-click="vm.postMsg(debateData.chatA[vm.msgCounter])">Post</md-button>
 
         </div> 
     </div>
