@@ -37,8 +37,12 @@ class DebateController {
   }
 
   postComment(data){
+    debugger;
     this.comments[this.commentCounter] = data;
     this.commentCounter = this.commentCounter +1;
+    var element = angular.element( document.querySelector( '#commentsCards' ) );
+    this.hhh = element[0].scrollHeight;
+    element[0].scrollTop = this.hhh+150;
   }
     
 }
