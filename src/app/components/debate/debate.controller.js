@@ -18,10 +18,10 @@ class DebateController {
     this.cards = [];
     this.comments = [];
     this.recommendations = [
-      {link:"http://edition.cnn.com/2016/08/10/politics/trump-second-amendment/index.html",img:"assets/articles/test1.JPG"},
-      {link:"2",img:"dsfad"},
-      {link:"3",img:"dsfad"},
-      {link:"4",img:"dsfad"}
+      {link:"http://www.haaretz.com/israel-news/1.736237",img:"assets/articles/img1.JPG"},
+      {link:"http://edition.cnn.com/2016/03/01/world/israel-deadly-navigation-mistake/index.html",img:"assets/articles/img2.JPG"},
+      {link:"http://time.com/4421400/transgender-u-s-military-israeli-army-idf/",img:"assets/articles/img3.JPG"},
+      {link:"http://www.jpost.com/Israel-News/IDF-soldiers-wounded-by-stray-bullets-in-separate-incidents-462698",img:"assets/articles/img4.JPG"}
     ]
     this.checkDisable = false;
 
