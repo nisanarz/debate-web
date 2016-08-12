@@ -1,5 +1,5 @@
 class DebateController {
-  constructor($scope, $firebaseObject, $rootScope) {
+  constructor($scope, $firebaseObject, $firebaseArray, $rootScope) {
     this.name = 'debate';
 
 
@@ -12,11 +12,16 @@ class DebateController {
     this.syncObjectDebate = $firebaseObject(ref);   
     this.syncObjectDebate.$bindTo($scope, "debateData");
 
+    var ref2 = firebase.database().ref().child("debates/1/chatA");
+    var ref3 = firebase.database().ref().child("debates/1/comments");
+    
+    
+
     this.commentCounter = 0;
     this.msgCounter = 0;
     this.currState = 1;
-    this.cards = [];
-    this.comments = [];
+    this.cards  = $firebaseArray(ref2);
+    this.comments = $firebaseArray(ref3);;
     this.recommendations = [
       {link:"http://www.haaretz.com/israel-news/1.736237",img:"https://lh3.googleusercontent.com/fdEH9UJvfQqH43NBXfH_WsVEGJxszcoGGMpO9gy8rpt1E7FVJjDNnWa-cwUUhe2B0fwj93-Iu0B1rVKGVNC57xkw-_5bFvtdHYEDAkRpLUdr6escoOVXbxYH7ugzldEiTRT49bGTQYBvMAVkDHVlFSz4k8KVu9jZp4hxvkne0ZiPiN-OvnnsRW5dHGqDi96ShRmDN_M5cAtDUx5OLA7ZFAKHjeqbBsFHNSWH1eV-qM2Ivl5FZx7Pe1BpLiy3w9KpU6nYyXF8PmhFfDWjVaq8tbUvkHlY1InYTl9dLuz6IL76krkGEdFEHhZtMl0KQYolyyTaEpWGuOQokSWQ_gjsE1pAlAA1satkCUNFq3f4bnNT3eZvxqITstxsQj0gileeAPIzO2pqQ-pxzJ-GcXIqrZF6BGMWFX0PAiJ1RCec2WdJJ7m6aRqBa-N4JBAYO87sr0cCzLQJkRGkbt8b0teBAcp9jae_kg70UygbMQszQwkKVp5t7AS1y2l-VbtOwaYxQnkANqvZxrtJSCE3bAoewZ--3MJ2C4Wtitd0lbe8h59DgE7X95CuzsB8DOIiOicSU_VScq5SXfGDhnyWHRO8GMYUjTP26Q=w246-h376-no"},
       {link:"http://edition.cnn.com/2016/03/01/world/israel-deadly-navigation-mistake/index.html",
@@ -27,23 +32,25 @@ class DebateController {
       img:"https://lh3.googleusercontent.com/oFKxBPZRrerl1-DpTlZcY0xhrwPDkx8jXF6p818PNCqtQJ1yfciHOz_wmg8Gz7DqoGnbJZjV-DR3nB2lhkcFk9JNGDTY2hL7zPlqi1whAKHbyxKaL6xhwS9Y9sYbuFwslwvQDPPQQeBDzhs8xfoTvj-aRWZLdcXXkSMVFGWnqUXtwm9MBJR9o_xXAXJTl-uMzsq6KGRzuIondJ9sEVIzo1P2MyNLBDhudR3mk3l3tL5x3gbTAC5drUrPmv2NNSwHgJTU-n7xU-r4hMqraqv_gYgwZg0o2NexUHfuBGVHI4i4YXTMdOPaVYKEkRl2yzfJ97U-JsCJCnKeU6nw3XqRCfe2liiacKO5MTGSaHdrTXt9SiSK0I-PkAG2Q88ml9F0D_PSBbekoslq3x05SAB4WsCMqCIVUi-_g-tvMocImERJjF5OhFYWl1XW3-5kY__5d28MCkKJpKixwsN15BW3iWCPn-LY1g6uAFENmkTSzjUBbJqpaxtpQAlcMt3bvi4iF2aapNE_vSbuqHUN-7xMm-bwamIABw5lHoaTmZFUus6ZrH3TI4roCUsDeea6wTI_s9hXUHZ_A4yLi4XbqFJQSarnztuN8g=w247-h378-no"}
     ]
     this.checkDisable = false;
-
+    this.currMsg= "";
+    this.currComment= "";
     
   }
 
   postMsg(data){
 
-
-    this.cards[this.msgCounter] = data;
+      this.cards.$add(data);
+    // this.cards[this.msgCounter] = data;
     this.currState = this.currState + 1;
+    //firebase.database().ref().child("debates/1").child("currState").set(this.currState);
+   // this.currState = this.currState + 1;
     this.msgCounter = this.msgCounter +1;
     this.checkDisable = !this.checkDisable;
 
   }
 
   postComment(data){
-    debugger;
-    this.comments[this.commentCounter] = data;
+    this.comments.$add(data);
     this.commentCounter = this.commentCounter +1;
     var element = angular.element( document.querySelector( '#commentsCards' ) );
     this.hhh = element[0].scrollHeight;
