@@ -5,6 +5,8 @@ class DebateController {
 
     this.currentUserID = $rootScope.currentUserID;
     this.currentUserName = $rootScope.currentUserName;
+
+
     //get debate object and users objects
     var ref = firebase.database().ref().child("debates/1");
     this.syncObjectDebate = $firebaseObject(ref);   
@@ -21,7 +23,7 @@ class DebateController {
       {link:"3",img:"dsfad"},
       {link:"4",img:"dsfad"}
     ]
-    this.checkDisable = true;
+    this.checkDisable = false;
 
     
   }
