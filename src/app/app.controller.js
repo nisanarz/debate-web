@@ -5,6 +5,7 @@ class AppController {
     $rootScope.currentUserName = null;
     $rootScope.isPending=false;
     $rootScope.isLive=false;
+    $rootScope.currState=1;
 
     const config = {
         apiKey: "AIzaSyB_QbI3_9CWew8XMeHfu6CKXYG147w0L0s",

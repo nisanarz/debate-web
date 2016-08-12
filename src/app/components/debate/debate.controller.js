@@ -1,5 +1,5 @@
 class DebateController {
-  constructor($scope, $firebaseObject, $rootScope) {
+  constructor($scope, $firebaseObject, $firebaseArray, $rootScope) {
     this.name = 'debate';
 
 
@@ -12,10 +12,14 @@ class DebateController {
     this.syncObjectDebate = $firebaseObject(ref);   
     this.syncObjectDebate.$bindTo($scope, "debateData");
 
+    var ref2 = firebase.database().ref().child("debates/1/chatA");
+    
+    
+
     this.commentCounter = 0;
     this.msgCounter = 0;
     this.currState = 1;
-    this.cards = [];
+    this.cards  = $firebaseArray(ref2);;
     this.comments = [];
     this.recommendations = [
       {link:"http://www.haaretz.com/israel-news/1.736237",img:"assets/articles/img1.JPG"},
@@ -24,15 +28,17 @@ class DebateController {
       {link:"http://www.jpost.com/Israel-News/IDF-soldiers-wounded-by-stray-bullets-in-separate-incidents-462698",img:"assets/articles/img4.JPG"}
     ]
     this.checkDisable = false;
-
+    this.currMsg= "";
     
   }
 
   postMsg(data){
 
-
-    this.cards[this.msgCounter] = data;
+      this.cards.$add(data);
+    // this.cards[this.msgCounter] = data;
     this.currState = this.currState + 1;
+    //firebase.database().ref().child("debates/1").child("currState").set(this.currState);
+   // this.currState = this.currState + 1;
     this.msgCounter = this.msgCounter +1;
     this.checkDisable = !this.checkDisable;
 

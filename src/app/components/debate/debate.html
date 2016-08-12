@@ -15,7 +15,7 @@
                         </md-card-header-text>
                     </md-card-header>
                     <md-card-content style="padding-top:4px; padding-bottom:6px">
-                        {{item}}
+                        {{item.$value}}
                     </md-card-content>
                 </md-card> 
             </div>               
@@ -27,10 +27,10 @@
            <!--<textarea ng-model="debateData.chatA[vm.msgCounter]"></textarea>-->
             <md-input-container class="md-block" flex-gt-sm>
             <label>Your Opinion</label>
-            <textarea ng-model="debateData.chatA[vm.msgCounter]" rows="9" style="background-color: white"></textarea>
+            <textarea ng-model="vm.currMsg" rows="9" style="background-color: white"></textarea>
             </md-input-container>
 
-            <md-button style="background-color: gray" ng-disabled="vm.currState % 2 !== vm.currentUserID" ng-click="vm.postMsg(debateData.chatA[vm.msgCounter])">Post</md-button>
+            <md-button style="background-color: gray" ng-disabled="vm.cards.length % 2 !== vm.currentUserID" ng-click=" vm.currState=debateData.currState;vm.postMsg(vm.currMsg);">Post</md-button>
 
         </div> 
     </div>
