@@ -65,7 +65,7 @@
             </div>
         </div>
     </div>
-    <div id="debateRecommendations" class="row" style="background-color: green;" ng-hide="vm.currentUserID !== 3">
+    <div id="debateRecommendations" class="row" ng-hide="vm.currentUserID !== 3">
         <md-card style="margin: 0px; padding: 1px; border-style: solid; border-color: gray; border-width: 1px; border-top-width: 2px" class="col-md-3" ng-repeat="item in vm.recommendations" md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
                     <div class="md-media-lg card-media">
                     <a href={{item.link}} style="margin: 0px"> 

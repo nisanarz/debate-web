@@ -6,11 +6,11 @@ class HomeController {
       lastName: ""
     }
     this.counter=1;
-    this.names = ["nisan","dima","adi" ];
+    this.names = ["Nisan","Dima","Adi" ];
     this.namesWithRates = [ 
-      {name1:"nisan",  name2:"lev",  rate:90 },
-      {name1:"dima",   name2:"john",   rate:57 },
-      {name1:"adi",    name2:"mike",    rate:15 } 
+      {name1:"Nisan",  name2:"Lev",  rate:90 },
+      {name1:"Dima",   name2:"John",   rate:57 },
+      {name1:"Adi",    name2:"Mike",    rate:15 } 
     ];
     this.animationsEnabled = true;
     var ref = firebase.database().ref().child("debates");
