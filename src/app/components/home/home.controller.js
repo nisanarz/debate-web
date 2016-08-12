@@ -6,7 +6,7 @@ class HomeController {
       lastName: ""
     }
     this.counter=1;
-    this.names = ["nisan","dima","adi" ];
+    this.names = ["Nisan","Dima","Adi" ];
     this.namesWithRates = [ 
       {name1:"Nisan",  name2:"Lev",  rate:90 },
       {name1:"Dima",   name2:"John",   rate:57 },
